@@ -72,7 +72,7 @@ local function GIXHK_fake_script()
 
 	script.Parent.MouseButton1Click:Connect(function  ()
 		game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.Main.Visible = not game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.Main.Visible
-		game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.DropShadow.Visible = not game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.DropShadow.Visible 
+		game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.DropShadow.Visible = game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.Main.Visible
 	end)
 	
 	while wait() do
