@@ -1,1 +1,83 @@
-local v0=Instance.new("ScreenGui");local v1=Instance.new("Frame");local v2=Instance.new("ImageButton");local v3=Instance.new("UICorner");local v4=Instance.new("TextLabel");local v5=Instance.new("TextLabel");v0.Parent=game.Players.LocalPlayer:WaitForChild("PlayerGui");v0.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;v1.Parent=v0;v1.BackgroundColor3=Color3.fromRGB(255,255,255);v1.BackgroundTransparency=1;v1.Position=UDim2.new(0.184154183,0,0.245635912,0);v1.Size=UDim2.new(0,100,0,100);v2.Parent=v1;v2.BackgroundColor3=Color3.fromRGB(255,255,255);v2.BackgroundTransparency=1;v2.Position=UDim2.new( -0.300000012,0,0.00999999978,0);v2.Size=UDim2.new(0,236,0,117);v2.Image="rbxassetid://13057989410";v3.CornerRadius=UDim.new(0,80);v3.Parent=v2;v4.Parent=v2;v4.BackgroundColor3=Color3.fromRGB(255,255,255);v4.BackgroundTransparency=1;v4.Position=UDim2.new(0.233050853,0,0.051282052,0);v4.Size=UDim2.new(0,203,0,69);v4.Font=Enum.Font.Unknown;v4.Text="Player :";v4.TextColor3=Color3.fromRGB(255,255,255);v4.TextSize=15;v5.Name="Level";v5.Parent=v2;v5.BackgroundColor3=Color3.fromRGB(255,255,255);v5.BackgroundTransparency=1;v5.Position=UDim2.new(0.233050853,0,0.324786305,0);v5.Size=UDim2.new(0,203,0,69);v5.Font=Enum.Font.Unknown;v5.Text="Level : ";v5.TextColor3=Color3.fromRGB(255,255,255);v5.TextSize=15;local function v42()local v44=Instance.new("LocalScript",v2);local v45=game:GetService("UserInputService");local v46=v44.Parent.Parent.ImageButton;local v47=nil;local v48=0.25;local v49=nil;local v50=nil;local function v51(v53)local v54=v53.Position-v49 ;local v55=UDim2.new(v50.X.Scale,v50.X.Offset + v54.X ,v50.Y.Scale,v50.Y.Offset + v54.Y );game:GetService("TweenService"):Create(v46,TweenInfo.new(v48),{Position=v55}):Play();end v46.InputBegan:Connect(function(v56)if ((v56.UserInputType==Enum.UserInputType.MouseButton1) or (v56.UserInputType==Enum.UserInputType.Touch)) then v47=true;v49=v56.Position;v50=v46.Position;v56.Changed:Connect(function()if (v56.UserInputState==Enum.UserInputState.End) then v47=false;end end);end end);v45.InputChanged:Connect(function(v57)if ((v57.UserInputType==Enum.UserInputType.MouseMovement) or (v57.UserInputType==Enum.UserInputType.Touch)) then if v47 then v51(v57);end end end);end coroutine.wrap(v42)();local function v43()local v52=Instance.new("LocalScript",v2);v52.Parent.MouseButton1Click:Connect(function()game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.Main.Visible= not game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.Main.Visible;game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.DropShadow.Visible= not game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.DropShadow.Visible;end);while wait() do v52.Parent.TextLabel.Text=game.Players.LocalPlayer.Name;v52.Parent.Level.Text=tostring(game:GetService("Players")['NewFarmBlox_009'].Data.Level.Value);end end coroutine.wrap(v43)();
+
+local ClosOpenUi = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+
+
+
+ClosOpenUi.Name = "ClosOpenUi"
+ClosOpenUi.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ClosOpenUi.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ClosOpenUi
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.Position = UDim2.new(0.184154183, 0, 0.245635912, 0)
+Frame.Size = UDim2.new(0, 100, 0, 100)
+
+ImageButton.Parent = Frame
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.Position = UDim2.new(-0.300000012, 0, 0.00999999978, 0)
+ImageButton.Size = UDim2.new(0, 91, 0, 117)
+ImageButton.Image = "rbxassetid://13058418189"
+
+UICorner.CornerRadius = UDim.new(0, 80)
+UICorner.Parent = ImageButton
+
+
+
+local function UAVMQ_fake_script()
+	local script = Instance.new('LocalScript', ImageButton)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent.Parent.ImageButton
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+end
+coroutine.wrap(UAVMQ_fake_script)()
+local function GIXHK_fake_script()
+	local script = Instance.new('LocalScript', ImageButton)
+
+	script.Parent.MouseButton1Click:Connect(function  ()
+		game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.Main.Visible = not game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.Main.Visible
+		game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.DropShadow.Visible = not game:GetService("CoreGui").RobloxGui.Modules.Logger.libs.DropShadow.Visible 
+	end)
+	
+	while wait() do
+		script.Parent.TextLabel.Text = game.Players.LocalPlayer.Name
+		script.Parent.Level.Text = tostring(game:GetService("Players")["NewFarmBlox_009"].Data.Level.Value)
+	end
+end
+coroutine.wrap(GIXHK_fake_script)()
