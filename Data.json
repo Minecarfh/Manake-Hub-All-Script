@@ -1,12 +1,15 @@
 {
   "NewsData": [
-[1, "02/05/2023 : Create Manake Hub Ui Update Script { Free }  "]
-    
+[1, "02/05/2023 : Create Manake Hub Ui Update Script { All }  "],
+[2, "02/05/2023 : Update Auto Farm { Mobile }  "],
+[3, "03/05/2023 : Fix Equip Weapon { Mobile }  "],
+[4, "03/05/2023 : Fix FastAttach { Mobile }  "],
+[5, "03/05/2023 : Add Admin Script { Pc }  "]
     ],
     "StatusData": {
-        "Free Script": "Online",
+        "Free Script": "Offline",
         "Kaitun": "Online",
-        "Plus Script": "Offline"
+        "Mobile Free Script": "Online"
     },
 
     "ScriptData": {
@@ -20,15 +23,18 @@
         },
         "Mobile Free Script": {
             "ThemeIndex": 3,
-"LatestVersion": "https://raw.githubusercontent.com/Minecarfh/Manake-Hub-All-Script/main/Mobile.lua"
+"LatestVersion": "https://raw.githubusercontent.com/Marukulaes/ManakeMobblie/main/README.md"
         },
-      
-        "Copy Discord": {
+        "Admin Zone": {
             "ThemeIndex": 4,
+"LatestVersion": "https://raw.githubusercontent.com/Marukulaes/Adminscript/main/README.md"
+        },
+        "Copy Discord": {
+            "ThemeIndex": 5,
             "LatestVersion": "https://pastebin.com/raw/JsagKNMN"
         },
         "Del Ui": {
-            "ThemeIndex": 4,
+            "ThemeIndex": 6,
             "LatestVersion": "https://pastebin.com/raw/ekiEQjpR"
         }
     }
