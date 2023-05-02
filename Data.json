@@ -1,6 +1,7 @@
 {
   "NewsData": [
 [1, "02/05/2023 : Create Manake Hub Ui Update Script { Free }  "]
+    
     ],
     "StatusData": {
         "Free Script": "Online",
@@ -24,6 +25,10 @@
         "Copy Discord": {
             "ThemeIndex": 4,
             "LatestVersion": "https://pastebin.com/raw/JsagKNMN"
+        },
+        "Del Ui": {
+            "ThemeIndex": 4,
+            "LatestVersion": "https://pastebin.com/raw/ekiEQjpR"
         }
     }
 }
