@@ -1,0 +1,40 @@
+{
+    "NewsData": [
+        [1, "02/05/2023: Create Manake Hub Ui Update Script { Free }  "],
+    ],
+    "StatusData": {
+        "EzHub": "Online",
+        "EzAPI": "Online",
+        "EzLauncher": "Online"
+    },
+    "LatestVersion": "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub.lua",
+    "Themes": {
+        "Free Script": {
+            "ThemeIndex": 1,
+            "Primary": [41, 53, 68],
+            "Secondary": [35, 47, 62],
+            "Tertiary": [28, 41, 56],
+            "Quaternary": [18, 98, 159],
+            "ScrollBarColor": [14, 21, 30],
+            "DefaultTextColor": [255, 255, 255]
+        },
+        "Sazx Hub": {
+            "ThemeIndex": 2,
+            "Primary": [25, 25, 25],
+            "Secondary": [30, 30, 30],
+            "Tertiary": [35, 35, 35],
+            "Quaternary": [40, 40, 40],
+            "ScrollBarColor": [14, 21, 30],
+            "DefaultTextColor": [255, 255, 255]
+        },
+        "Plus Script": {
+            "ThemeIndex": 3,
+            "Primary": [25, 25, 25],
+            "Secondary": [30, 30, 30],
+            "Tertiary": [35, 35, 35],
+            "Quaternary": [190, 35, 35],
+            "ScrollBarColor": [14, 21, 30],
+            "DefaultTextColor": [240, 240, 240]
+        }
+    }
+}
