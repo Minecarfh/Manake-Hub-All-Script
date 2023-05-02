@@ -18,10 +18,11 @@
             "ThemeIndex": 2,
             "LatestVersion": "https://raw.githubusercontent.com/Marukulaes/manake12/main/README.md"
         },
-        "Plus Script": {
+        "Mobile Free Script": {
             "ThemeIndex": 3,
 "LatestVersion": ""
         },
+      
         "Copy Discord": {
             "ThemeIndex": 4,
             "LatestVersion": "https://pastebin.com/raw/JsagKNMN"
@@ -29,6 +30,7 @@
         "Del Ui": {
             "ThemeIndex": 4,
             "LatestVersion": "https://pastebin.com/raw/ekiEQjpR"
-        }
+        },
+      
     }
 }
